@@ -133,6 +133,157 @@
 //     }
 // }
 
+//Question 6:count consonants in string.
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     string str;
+//     int count=0;
+//     cout<<"Enter a string: ";
+//     getline(cin, str);
+//     for(int i=0; i<str.length(); i++){
+//         char ch = str[i];
+//         if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')){
+//             if(ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u' &&
+//                ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U'){
+//                 count++;
+//             }
+//         }
+//     }
+//     cout<<"Number of consonants in the string: "<<count<<endl;
+//     return 0;
+// }
+
+//Question 7:Find the largest smallest element in array.
+
+//  #include<iostream>
+//  #include<climits>
+//  using namespace std;
+//  int main(){
+//     int n;
+//     cout<<"Enter Size of array"<<endl;
+//     if(!(cin>>n) || n<=0){
+//         cout<<"Invalid size"<<endl;
+//         return 1;
+//     }
+//     int *arr = new int[n];
+//     cout<<"Enter elements in array:"<<endl;
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int smallest = INT_MAX;
+//     int largest = INT_MIN;
+//     for(int i=0;i<n;i++){
+//         if(arr[i] < smallest) smallest = arr[i];
+//         if(arr[i] > largest) largest = arr[i];
+//     }
+//     cout<<"Smallest: "<<smallest<<endl;
+//     cout<<"Largest: "<<largest<<endl;
+//     delete[] arr;
+//     return 0;
+//  }
+
+
+
+//Question 8:Reverse each row of matrix
+
+// #include<iostream>
+// #include<vector>
+
+
+// using namespace std;
+// int main(){
+//     int rows,cols;
+//     cout<<"Enter rows & cols="<<endl;
+//     cin>>rows>>cols;
+//     vector<vector<int>>matrix(rows,vector<int>(cols));
+//     cout<<"Enter elements of matrix="<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//           cin>>matrix[i][j];
+//         }
+//     }
+//     for(int i=0;i<rows;i++){
+//         int start=0,end=cols-1;
+//         while(start<end){
+//             swap(matrix[i][start],matrix[i][end]);
+//             start++;
+//             end--;
+//         }
+//     }
+//     cout<<"Matrix after reversing each row:"<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//             cout<<matrix[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+
+//Question 9:Sum of boundary elements of matrix.
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//     int rows,cols;
+//     cout<<"Enter rows & cols="<<endl;
+//     cin>>rows>>cols;
+//     vector<vector<int>>matrix(rows,vector<int>(cols));
+//     cout<<"Enter elements of matrix="<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//           cin>>matrix[i][j];
+//         }
+//     }
+//     int sum=0;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//             if(i==0 || i==rows-1 || j==0 || j==cols-1){
+//                 sum+=matrix[i][j];
+//             }
+//         }
+//     }
+//     cout<<"Sum of boundary elements: "<<sum<<endl;
+// }
+
+//Question 10:Delete the element from array.
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter size of array"<<endl;
+//     cin>>n;
+//     int arr[n];
+//     cout<<"Enter elements in array"<<endl;
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     int element;
+//     cout<<"Enter element to delete"<<endl;
+//     cin>>element;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==element){
+//             for(int j=i;j<n;j++){
+//                 arr[j]=arr[j+1];
+//             }
+//             n--;
+//             i--;
+//         }
+//     }
+//     cout<<"Array after deleting element"<<endl;
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+//Question 
 
 //Question-11:Leaders in an Array
 
@@ -208,3 +359,211 @@
 
 // }
 
+//Question 13:Longest consecutive increasing subarray.
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+
+// int longestSubarray(int arr[], int n){
+
+//     int maxLength = 1;
+//     int currentLength = 1;
+
+//     for(int i = 1; i < n; i++){
+
+//         if(arr[i] > arr[i - 1]){
+//             currentLength++;
+//         }
+//         else{
+//             maxLength = max(maxLength, currentLength);
+//             currentLength = 1;
+//         }
+//     }
+
+//     maxLength = max(maxLength, currentLength);
+
+//     return maxLength;
+// }
+
+// int main(){
+
+//     int n;
+//     cin >> n;
+
+//     int arr[n];
+
+//     for(int i = 0; i < n; i++){
+//         cin >> arr[i];
+//     }
+
+//     cout << "Longest consecutive increasing subarray: "
+//          << longestSubarray(arr, n) << endl;
+
+//     return 0;
+// }
+//Question 14:Frequency SSort
+
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+
+// int main(){
+
+//     int n;
+//     cin >> n;
+
+//     vector<int> arr(n);
+
+//     for(int i = 0; i < n; i++){
+//         cin >> arr[i];
+//     }
+
+//     sort(arr.begin(), arr.end());
+
+//     vector<pair<int,int>> freq;
+
+//     for(int i = 0; i < n; ){
+
+//         int count = 1;
+
+//         while(i + count < n && arr[i] == arr[i + count]){
+//             count++;
+//         }
+
+       
+//         freq.push_back({count, arr[i]});
+
+//         i = i + count;
+//     }
+
+//     sort(freq.begin(), freq.end());
+
+//     for(int i = 0; i < freq.size(); i++){
+
+//         int count = freq[i].first;
+//         int element = freq[i].second;
+
+//         while(count > 0){
+//             cout << element << " ";
+//             count--;
+//         }
+//     }
+
+//     return 0;
+// }
+
+
+//Matrix Diagonal Difference
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin>>n;
+//     vector<vector<int>> matrix(n,vector<int>(n));
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             cin>>matrix[i][j];
+//         }
+//     }
+//     int sum1=0,sum2=0;
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             if(i==j){
+//                 sum1+=matrix[i][j];
+//             }
+//             if(i+j==n-1){
+//                 sum2+=matrix[i][j];
+//             }
+//         }
+//     }
+//    if(sum1 > sum2){
+//     cout<<"Difference:"<< sum1 - sum2;
+// }
+// else{
+//     cout <<"Difference:"<< sum2 - sum1;
+// }
+// }
+
+//Question 16:Rotate Matrix by 180.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+
+//     int n;
+//     cin >> n;
+
+//     vector<vector<int>> matrix(n, vector<int>(n));
+
+    
+//     for(int i = 0; i < n; i++){
+//         for(int j = 0; j < n; j++){
+//             cin >> matrix[i][j];
+//         }
+//     }
+
+//     for(int i = n - 1; i >= 0; i--){
+
+//         for(int j = n - 1; j >= 0; j--){
+
+//             cout << matrix[i][j] << " ";
+//         }
+
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+//Question 17:Sort 0s, 1s and 2s in an Array.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+
+//     int n;
+//     cin >> n;
+
+//     vector<int> arr(n);
+
+//     for(int i = 0; i < n; i++){
+//         cin >> arr[i];
+//     }
+
+//     int low = 0;
+//     int mid = 0;
+//     int high = n - 1;
+
+//     while(mid <= high){
+
+//         if(arr[mid] == 0){
+
+//             swap(arr[low], arr[mid]);
+//             low++;
+//             mid++;
+//         }
+
+//         else if(arr[mid] == 1){
+
+//             mid++;
+//         }
+
+//         else{
+
+//             swap(arr[mid], arr[high]);
+//             high--;
+//         }
+//     }
+
+
+//     for(int i = 0; i < n; i++){
+//         cout << arr[i] << " ";
+//     }
+
+//     return 0;
+// }
