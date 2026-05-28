@@ -133,6 +133,8 @@
 //     }
 // }
 
+//Question 5:
+
 //Question 6:count consonants in string.
 
 // #include<iostream>
@@ -283,9 +285,143 @@
 // }
 
 
-//Question 
+//Question 11:Votes for candidates in an election.>n/4.
 
-//Question-11:Leaders in an Array
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     int n;int count=0;
+//     cout<<"Enter size of array"<<endl;
+//     cin>>n;
+//     int arr[n];
+//     cout<<"Enter elements in array"<<endl;
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     sort(arr, arr + n);
+//     for(int i=1;i<n;){
+//         int currentCount=1;
+//         while(i<n && arr[i]==arr[i-1]){
+//             currentCount++;
+//             i++;
+//         }
+//         if(currentCount>(n/4)){
+//             count++;
+//         }
+//         i++;
+//     }
+//     cout<<"Number of candidates with more than n/4 votes: "<<count<<endl;
+
+
+// }
+
+
+//Question 12: Transpose of matrix
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int rows,cols;
+//     cout<<"Enter rows & cols="<<endl;
+//     cin>>rows>>cols;
+//     vector<vector<int>>matrix(rows,vector<int>(cols));
+//     cout<<"Enter elements of matrix="<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//           cin>>matrix[i][j];
+//         }
+//     }
+//      if(rows == cols) {
+
+//         for(int i = 0; i < rows; i++) {
+//             for(int j = i + 1; j < cols; j++) {
+
+//                 int temp = matrix[i][j];
+//                 matrix[i][j] = matrix[j][i];
+//                 matrix[j][i] = temp;
+//             }
+//         }
+//     }
+//     cout<<"Transpose of matrix:"<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//             cout<<matrix[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+    
+  
+// }
+
+//Question 13:Reverse the matrix and negate the even rows in matrix.
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     int rows,cols;
+//     cout<<"Enter rows & cols="<<endl;
+//     cin>>rows>>cols;
+//     vector<vector<int>>matrix(rows,vector<int>(cols));
+//     cout<<"Enter elements of matrix="<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//           cin>>matrix[i][j];
+//         }
+//     }
+//     for(int i=0;i<rows/2;i++){
+//         swap(matrix[i],matrix[rows-1-i]);
+//     }
+//     for(int i=0;i<rows;i++){
+//         if(i%2==0){
+//             for(int j=0;j<cols;j++){
+//                 matrix[i][j]=-matrix[i][j];
+//             }
+//         }
+//     }
+//     cout<<"Matrix after reversing and negating even rows:"<<endl;
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++){
+//             cout<<matrix[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+//Question 14:Sum of give n Range in Array (using Prefix).
+// #include<iostream>
+
+
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter size of array: "<<endl;
+//     cin>>n;
+//     int arr[n];
+//     cout<<"Enter elements in array: "<<endl;
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//    int  prefix[n];
+//     prefix[0]=arr[0];
+//     for(int i=1;i<n;i++){
+//         prefix[i]=prefix[i-1]+arr[i];
+//     }   
+//     int l,r;
+//     cin>>l>>r;
+//     if(l==0){
+//         cout<<"Sum of range: "<<prefix[r]<<endl;
+//     }
+//     else{
+//         cout<<"Sum of range: "<<prefix[r]-prefix[l-1]<<endl;
+//     }
+   
+// }
+
+
+
+//Question-15:Leaders in an Array
 
 // #include<iostream>
 // #include<vector>
@@ -322,7 +458,7 @@
 
         
 
-//Question 12:Spiral Traversal of Matrix
+//Question 16:Spiral Traversal of Matrix
 // #include<iostream>
 // #include<vector>
 // using namespace std;
@@ -359,7 +495,7 @@
 
 // }
 
-//Question 13:Longest consecutive increasing subarray.
+//Question 17:Longest consecutive increasing subarray.
 // #include<iostream>
 // #include<vector>
 // #include<algorithm>
@@ -402,7 +538,7 @@
 
 //     return 0;
 // }
-//Question 14:Frequency SSort
+//Question 18:Frequency SSort
 
 // #include<iostream>
 // #include<vector>
@@ -455,7 +591,7 @@
 // }
 
 
-//Matrix Diagonal Difference
+//Question 19:Matrix Diagonal Difference
 // #include<iostream>
 // #include<vector>
 // using namespace std;
@@ -487,7 +623,7 @@
 // }
 // }
 
-//Question 16:Rotate Matrix by 180.
+//Question 20:Rotate Matrix by 180.
 // #include<iostream>
 // #include<vector>
 // using namespace std;
@@ -519,7 +655,7 @@
 //     return 0;
 // }
 
-//Question 17:Sort 0s, 1s and 2s in an Array.
+//Question 21:Sort 0s, 1s and 2s in an Array.
 // #include<iostream>
 // #include<vector>
 // using namespace std;
