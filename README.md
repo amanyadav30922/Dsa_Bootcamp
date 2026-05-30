@@ -27,6 +27,24 @@ The problems mainly focus on Arrays, Matrices, Strings, and basic problem-solvin
 17. Spiral Traversal of Matrix
 18. Matrix Diagonal Difference
 19. Rotate Matrix by 180°
+---
+# String Questions in C++
+
+## Questions List
+
+1. Palindrome of String
+2. Remove Vowels from String
+3. Remove Duplicates from String
+4. Find First Non-Repeating Character in String
+5. Check if Two Strings are Anagrams
+6. Longest Common Prefix
+7. Longest Common Subsequence (LCS)
+8. String Comparison
+9. Longest Substring Without Repeating Characters
+10. Minimum Window Substring
+11. Valid Parentheses
+12. Longest Palindromic Substring
+13. Group Anagrams
 
 ---
 
