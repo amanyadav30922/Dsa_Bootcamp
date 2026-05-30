@@ -233,22 +233,31 @@
 //     cout << longestCommonSubsequence(s1, s2);
 // }
 
-//Question 8:String Comparison.
+//Question 8:String Compression.
 // #include<iostream>
-// #include<string>
 // using namespace std;
-// int main(){
-//     string str1,str2;
-//     cout<<"Enter first string="<<endl;
-//     getline(cin,str1);
-//     cout<<"Enter second string="<<endl;
-//     getline(cin,str2);
-//     if(str1==str2){
-//         cout<<"Strings are equal"<<endl;
+
+// int main() {
+//     string str;
+//     cin >> str;
+
+//     string result = "";
+//     int count = 1;
+
+//     for(int i = 0; i < str.length(); i++) {
+//         if(i < str.length() - 1 && str[i] == str[i + 1]) {
+//             count++;
+//         }
+//         else {
+//             result += str[i];
+//             if(count > 1) {
+//                 result += to_string(count);
+//             }
+//             count = 1;
+//         }
 //     }
-//     else{
-//         cout<<"Strings are not equal"<<endl;
-//     }
+
+//     cout << result;
 // }
 
 
