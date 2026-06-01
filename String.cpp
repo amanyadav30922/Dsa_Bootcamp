@@ -98,7 +98,8 @@
 
 // int main() {
 
-//     string s = "geeksforgeeks";
+//     string s;
+//     cin >> s;
 
 //     for(int i=0; i<s.length(); i++) {
 
@@ -117,6 +118,7 @@
 //     }
 
 //     cout << "No Non-Repeating Character";
+    
 // }
 
 
@@ -500,5 +502,161 @@
 //         cout << "]" << endl;
 //     }
 // }
+
+
+//Question 14:First Non repeating Characters in a String.
+
+//Better approach using frequency array.
+
+// #include<iostream>
+// #include<string>
+// #include<unordered_map>
+// using namespace std;
+// int main(){
+//     string str;
+//     cout<<"Enter a string="<<endl;
+//     getline(cin,str);
+//     unordered_map<char,int> freq;
+//     for(char ch : str){
+//         freq[ch]++;
+//     }
+//     for(int i=0;i<str.length();i++){
+//         if(freq[str[i]]==1){
+//             cout<<"First non repeating character is: "<<str[i]<<endl;
+//             break;
+//         }
+//     }
+// }
+
+//Question 15: Rotate left or right by k times. 
+//Better approach is using reversal algorithm.
+
+// #include <iostream>
+// #include <string>
+// #include <algorithm>
+// #include <cctype>
+// using namespace std;
+
+// void leftrotate(string &str, int k, int len) {
+//     int n = str.length();
+//     k = k % n;
+
+//     reverse(str.begin(), str.begin() + k);
+//     reverse(str.begin() + k, str.end());
+//     reverse(str.begin(), str.end());
+
+//     // Convert first len characters to uppercase
+//     for (int i = 0; i < n && i < len; i++) {
+//         str[i] = toupper(str[i]);
+//     }
+// }
+
+// void rightrotate(string &str, int k, int len) {
+//     int n = str.length();
+//     k = k % n;
+
+//     reverse(str.begin(), str.end());
+//     reverse(str.begin(), str.begin() + k);
+//     reverse(str.begin() + k, str.end());
+
+//     // Convert first len characters to lowercase
+//     for (int i = 0; i < n && i < len; i++) {
+//         str[i] = tolower(str[i]);
+//     }
+// }
+
+// int main() {
+//     string str;
+//     int k, len;
+
+//     cout << "Enter a string: ";
+//     getline(cin, str);
+
+//     cout << "Enter the number of rotations: ";
+//     cin >> k;
+
+//     cout << "Enter number of characters to change case: ";
+//     cin >> len;
+
+//     string str1 = str;
+
+//     leftrotate(str, k, len);
+//     cout << "String after left rotation and uppercase: " << str << endl;
+
+//     rightrotate(str1, k, len);
+//     cout << "String after right rotation and lowercase: " << str1 << endl;
+
+//     return 0;
+// }
+
+
+
+
+//Question 16: String lexical order print.
+// #include<iostream>
+// #include<string>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     string str;
+//     cout<<"Enter a string="<<endl;
+//     getline(cin,str);
+//     sort(str.begin(),str.end());
+//     do{
+//         cout<<str<<endl;}
+//     while(next_permutation(str.begin(),str.end()));
+//     cout<<endl;
+//     return 0;
+// }
+
+
+//Decode String problem example: "3[a]2[bc]"= "aaabcbc"
+
+// #include<iostream>
+// #include<string>
+// #include<stack>
+// using namespace std;
+
+// string decodeString(string s){
+//     stack<int> numStack;
+//     stack<string> strStack;
+//     string currStr="";
+//     int currNum=0;
+//     for(char ch : s){
+//         if(isdigit(ch)){
+//             currNum=currNum*10+(ch-'0');
+//         }
+//         else if(ch=='['){
+//             numStack.push(currNum);
+//             strStack.push(currStr);
+//             currNum=0;
+//             currStr="";
+//         }
+//         else if(ch==']'){
+//             int repeat=numStack.top();
+//             numStack.pop();
+//             string prevStr=strStack.top();
+//             strStack.pop();
+//             string temp="";
+//             for(int i=0;i<repeat;i++){
+//                 temp+=currStr;
+//             }
+//             currStr=prevStr+temp;
+//         }
+//         else{
+//             currStr+=ch;
+//         }
+// }
+// return currStr;
+// }
+// int main(){
+
+//     string s;
+//     cin >> s;
+//     cout << decodeString(s);
+//     return 0;
+
+// }
+
 
 //All Questions completed.
